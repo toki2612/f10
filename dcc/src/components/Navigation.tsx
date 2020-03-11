@@ -3,10 +3,14 @@ import * as React from 'react'
 // import classnames from 'classnames'
 import styles from './Navigation.module.css'
 import IconButton from '@material-ui/core/IconButton';
-import Home from '@material-ui/icons/Home';
-import Search from '@material-ui/icons/Search';
-import Calendar from '@material-ui/icons/CalendarToday';
 import { Link } from 'react-router-dom';
+// import 'react-ionicons/lib/profi
+
+const Home = require('react-ionicons/lib/IosHomeOutline')
+const Search = require('react-ionicons/lib/IosSearchOutline')
+const Chats = require('react-ionicons/lib/IosChatbubblesOutline')
+const Calendar = require('react-ionicons/lib/IosCalendarOutline')
+const Profile = require('react-ionicons/lib/IosPersonOutline')
 
 type MatchParams = {
   uid: string
@@ -24,11 +28,11 @@ export class Navigation extends React.Component<INavigationProps> {
 
     return (
       <div className={styles.container}>
-          <IconButton color="inherit" component={Link} to={'/'}><Home /></IconButton>
-          <IconButton color="inherit" component={Link} to={'/discover'}><Search /></IconButton>
-          <IconButton color="inherit" component={Link} to={'/events'}><Calendar/></IconButton>
-          <IconButton color="inherit" component={Link} to={'/chats'}></IconButton>
-          <IconButton color="inherit" component={Link} to={'/profile'}></IconButton>
+          <IconButton component={Link} to={'/'}><Home color="white"/></IconButton>
+          <IconButton component={Link} to={'/discover'}><Search color="white"/></IconButton>
+          <IconButton component={Link} to={'/events'}><Calendar color="white"/></IconButton>
+          <IconButton component={Link} to={'/chats'}><Chats color="white"/></IconButton>
+          <IconButton component={Link} to={'/profile'}><Profile color="white"/></IconButton>
       </div>
     )
   }
