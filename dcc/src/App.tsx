@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { observer } from 'mobx-react';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import { MatchMediaProvider } from 'mobx-react-matchmedia'
+import { breakpoints } from './stores/breakpointsStore';
+import { Tinder } from './components/Tinder';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+@observer
+class App extends React.Component {
+
+  async componentDidMount () {
+  }
+
+  render () {
+    let content: JSX.Element | null = null
+    content = (
+      <Router>
+        <Switch>
+          <Route path='/:uid?' component={Tinder}/>
+        </Switch>
+      </Router>
+      
+    )
+    return (
+        <React.Fragment>
+          { content }
+          <MatchMediaProvider breakpoints={ breakpoints } />
+        </React.Fragment>
+    )
+  }
 }
 
-export default App;
+export default App
