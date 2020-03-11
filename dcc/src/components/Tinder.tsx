@@ -21,10 +21,20 @@ interface ITinderProps extends RouteComponentProps<MatchParams> {
 export class Tinder extends React.Component<ITinderProps> {
 
   render () {
+    const sections: JSX.Element[] = []
+    for (let i = 0; i < 3; i++) {
+      sections.push(
+        <div key={i} className="section">
+          <div className={styles.section}>
+            {i}
+          </div>
+        </div>
+      )
+    }
 
     return (
       <div className={styles.container}>
-        <ReactFullpage
+        {<ReactFullpage
           //fullpage options
           licenseKey = {'39614BC3-00294F80-B8B6ECF0-428BB41B'}
           scrollingSpeed = {500}
@@ -32,19 +42,11 @@ export class Tinder extends React.Component<ITinderProps> {
           render={({ state, fullpageApi }: any) => {
             return (
               <>
-                <div className="section">
-                  <p>Section 1 (welcome to fullpage.js)</p>
-                  <button onClick={() => fullpageApi.moveSectionDown()}>
-                    Click me to move down
-                  </button>
-                </div>
-                <div className="section">
-                  <p>Section 2</p>
-                </div>
+                {sections}
               </>
             );
           }}
-        />
+        />}
       </div>
     )
   }
