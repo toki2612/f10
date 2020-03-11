@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

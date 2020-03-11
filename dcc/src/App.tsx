@@ -5,6 +5,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { MatchMediaProvider } from 'mobx-react-matchmedia'
 import { breakpoints } from './stores/breakpointsStore';
 import { Tinder } from './components/Tinder';
+import { Navigation } from './components/Navigation';
 
 @observer
 class App extends React.Component {
@@ -17,8 +18,9 @@ class App extends React.Component {
     content = (
       <Router>
         <Switch>
-          <Route path='/:uid?' component={Tinder}/>
+          <Route exact path='/' component={Tinder}/>
         </Switch>
+        <Navigation />
       </Router>
       
     )
