@@ -4,6 +4,7 @@ import * as React from 'react'
 import styles from './Tinder.module.css'
 import { RouteComponentProps } from 'react-router-dom'
 import ReactFullpage from '@fullpage/react-fullpage';
+import { Project } from './Project'
 
 // const pluginWrapper = () => {
 //   require('./statics/fullpage.scrollHorizontally.min');
@@ -25,9 +26,7 @@ export class Tinder extends React.Component<ITinderProps> {
     for (let i = 0; i < 3; i++) {
       sections.push(
         <div key={i} className="section">
-          <div className={styles.section}>
-            {i}
-          </div>
+          <Project />
         </div>
       )
     }
