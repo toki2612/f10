@@ -4,13 +4,9 @@ import * as React from 'react'
 import styles from './Tinder.module.css'
 import { RouteComponentProps } from 'react-router-dom'
 import ReactFullpage from '@fullpage/react-fullpage';
-import { Project } from './Project'
+import { Project } from './common/project/Project'
 import bind from 'bind-decorator';
 import { routerStore } from '../stores/routerStore';
-
-// const pluginWrapper = () => {
-//   require('./statics/fullpage.scrollHorizontally.min');
-// };
 
 type MatchParams = {
   uid: string
@@ -35,9 +31,12 @@ export class Tinder extends React.Component<ITinderProps> {
   render () {
     const sections: JSX.Element[] = []
     for (let i = 0; i < 3; i++) {
+      const data = {
+        idx: i
+      }
       sections.push(
         <div key={i} className="section">
-          <Project />
+          <Project data={data}/>
         </div>
       )
     }

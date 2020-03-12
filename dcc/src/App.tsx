@@ -6,7 +6,7 @@ import { MatchMediaProvider } from 'mobx-react-matchmedia'
 import { breakpoints } from './stores/breakpointsStore';
 import { Tinder } from './components/Tinder';
 import { Navigation } from './components/Navigation';
-import { Project } from './components/Project';
+import { ProjectData } from './components/common/project/ProjectData';
 
 @observer
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
     let content: JSX.Element | null = null
     content = (
         <Switch>
-          <Route exact path='/:id?/data' component={Project}/>
+          <Route exact path='/:id?/data' component={ProjectData}/>
           <Route exact path='/:id?' component={Tinder}/>
         </Switch>
         
