@@ -18,10 +18,26 @@ interface IProjectDataProps extends RouteComponentProps<MatchParams> {
 
 @observer
 export class ProjectData extends React.Component<IProjectDataProps> {
+  @observable ndaSigned: boolean = false
+
+  @bind
+  @action
+  signNda () {
+    this.ndaSigned = true
+  }
   
   render () {
+
+    let NDABox: JSX.Element | null = null
+    if (!this.ndaSigned) {
+      NDABox = <div className={styles.ndaBox}>
+      <div className={styles.ndaMessage}>Nda message please sign etc.</div>
+      <TextButton text='Sign NDA' onClick={this.signNda}/>
+    </div>
+    }
+
     return (
-      <div className={styles.container}>
+      <div className={classnames(styles.container, this.ndaSigned ? undefined : styles.locked)}>
         <div className={styles.mainPage}>
           <div className={styles.logo}>
             Logo
@@ -72,6 +88,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
             </div>
           </div>
         </div>
+        {NDABox}
       </div>
     )
   }
