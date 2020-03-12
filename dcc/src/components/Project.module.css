@@ -2,13 +2,24 @@
   background-color: #1A1A1A;
   color: #C9AE58;
   display: flex;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-bottom: 3.5rem;
+}
+
+.mainPage {
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
   height: 100%;
-  color: white;
-  padding-bottom: 3.5rem;
+}
+
+.slide1 .mainPage {
+  transform: translateX(-100%);
+  transition: transform 200ms ease-in-out;
 }
 
 .video {
@@ -64,4 +75,13 @@
   height: 3rem;
   background-color: #f1f2f6;
   background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }

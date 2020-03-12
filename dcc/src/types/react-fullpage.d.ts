@@ -5,6 +5,7 @@ declare module '@fullpage/react-fullpage' {
     licenseKey: string
     scrollingSpeed: number
     render: any
+    onLeave: any
   }
 
   export class ReactFullpage extends React.Component<IFPProps> {
