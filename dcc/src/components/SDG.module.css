@@ -7,7 +7,6 @@
 .icons {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
   padding: 3rem 1.25rem 7rem;
 }
 

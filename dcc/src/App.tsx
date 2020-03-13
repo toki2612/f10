@@ -10,6 +10,7 @@ import { ProjectData } from './components/common/project/ProjectData';
 import { Discover } from './components/Discover';
 import { SDG } from './components/SDG';
 import { Events } from './components/Events';
+import { Profile } from './components/Profile';
 
 @observer
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
     content = (
         <Switch>
           <Route exact path='/events' component={Events}/>
+          <Route exact path='/profile' component={Profile}/>
           <Route exact path='/discover/sdg' component={SDG}/>
           <Route exact path='/discover' component={Discover}/>
           <Route exact path='/:id?/data' component={ProjectData}/>

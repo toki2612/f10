@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAD6A5;
+  background-image: linear-gradient(to bottom, #FAD6A5 0%, #EBC796 100%);
+  padding: 2.25rem 1.25rem 0.75rem;
+}
+
+.photo {
+  height: 4.375rem;
+  width: 4.375rem;
+  border-radius: 50%;
+}
+
+.name {
+  /* color: white; */
+}
+
+.favorites {
+  height: 6rem;
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.favorite {
+  width: 8rem;
+  height: 100%;
+  margin-right: 1rem;
+}
+
+.favoritesBox {
+  color: white;
+  padding: 1.25rem;
+}
+
+.events {
+
+}
+
+.portfolio {
+  margin-top: 0.5rem;
+}
