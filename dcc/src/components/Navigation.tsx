@@ -21,7 +21,7 @@ interface INavigationProps {
 export class Navigation extends React.Component<INavigationProps> {
 
   getColor (path: string) {
-    if (routerStore.location.pathname === path) {
+    if (routerStore.location.pathname.startsWith(path)) {
       return '#C9AE58'
     }
     return '#fff'
@@ -30,7 +30,7 @@ export class Navigation extends React.Component<INavigationProps> {
   render () {
     return (
       <div className={styles.container}>
-        <IconButton component={Link} to={'/'}><Home color={this.getColor('/')}/></IconButton>
+        <IconButton component={Link} to={'/'}><Home color={this.getColor('/0')}/></IconButton>
         <IconButton component={Link} to={'/discover'}><Search color={this.getColor('/discover')}/></IconButton>
         <IconButton component={Link} to={'/chats'}><Chats color={this.getColor('/chats')}/></IconButton>
         <IconButton component={Link} to={'/events'}><Calendar color={this.getColor('/events')}/></IconButton>

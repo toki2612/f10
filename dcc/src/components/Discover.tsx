@@ -33,6 +33,11 @@ export class Discover extends React.Component<IDiscoverProps> {
     this.employees = [...newArr]
   }
 
+  @bind
+  openSDG () {
+    routerStore.push(routerStore.location.pathname + '/sdg')
+  }
+
   render () {
 
     const videos: JSX.Element[] = []
@@ -53,7 +58,7 @@ export class Discover extends React.Component<IDiscoverProps> {
             placeholder="Search"
             classes={{ root: styles.searchInput }}
           />
-          <IconButton><Plus color={'#fff'}/></IconButton>
+          <IconButton onClick={this.openSDG}><Plus color={'#fff'}/></IconButton>
         </div>
         <div className={styles.sliders}>
         <Slider

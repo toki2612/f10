@@ -19,6 +19,10 @@
   padding: 0.25rem 1rem;
 }
 
+.searchInput input {
+  padding: 0.5rem 0.5rem 0.4rem;
+}
+
 .sliders {
   display: flex;
   flex-direction: column;
