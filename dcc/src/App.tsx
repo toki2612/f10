@@ -9,6 +9,7 @@ import { Navigation } from './components/Navigation';
 import { ProjectData } from './components/common/project/ProjectData';
 import { Discover } from './components/Discover';
 import { SDG } from './components/SDG';
+import { Events } from './components/Events';
 
 @observer
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
     let content: JSX.Element | null = null
     content = (
         <Switch>
+          <Route exact path='/events' component={Events}/>
           <Route exact path='/discover/sdg' component={SDG}/>
           <Route exact path='/discover' component={Discover}/>
           <Route exact path='/:id?/data' component={ProjectData}/>

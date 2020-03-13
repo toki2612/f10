@@ -32,8 +32,8 @@ export class Navigation extends React.Component<INavigationProps> {
       <div className={styles.container}>
         <IconButton component={Link} to={'/'}><Home color={this.getColor('/')}/></IconButton>
         <IconButton component={Link} to={'/discover'}><Search color={this.getColor('/discover')}/></IconButton>
-        <IconButton component={Link} to={'/events'}><Calendar color={this.getColor('/events')}/></IconButton>
         <IconButton component={Link} to={'/chats'}><Chats color={this.getColor('/chats')}/></IconButton>
+        <IconButton component={Link} to={'/events'}><Calendar color={this.getColor('/events')}/></IconButton>
         <IconButton component={Link} to={'/profile'}><Profile color={this.getColor('/profile')}/></IconButton>
       </div>
     )

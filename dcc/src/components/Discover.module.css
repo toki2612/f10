@@ -24,3 +24,17 @@
   flex-direction: column;
   padding: 0 1.25rem;
 }
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video {
+  background-image: url(../resources/img/gif-0.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 7rem;
+}

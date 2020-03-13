@@ -34,6 +34,17 @@ export class Discover extends React.Component<IDiscoverProps> {
   }
 
   render () {
+
+    const videos: JSX.Element[] = []
+    for (let i = 0; i < 8; i++) {
+      videos.push(
+        <div className={styles.video}>
+
+        </div>
+      )
+    }
+
+
     return (
       <div className={styles.container}>
         <div className={styles.searchBox}>
@@ -63,6 +74,9 @@ export class Discover extends React.Component<IDiscoverProps> {
           aria-labelledby="range-slider"
           // getAriaValueText={valuetext}
         />
+        </div>
+        <div className={styles.videos}>
+          {videos}
         </div>
       </div>
     )
