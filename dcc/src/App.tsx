@@ -7,6 +7,7 @@ import { breakpoints } from './stores/breakpointsStore';
 import { Tinder } from './components/Tinder';
 import { Navigation } from './components/Navigation';
 import { ProjectData } from './components/common/project/ProjectData';
+import { Discover } from './components/Discover';
 
 @observer
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
     let content: JSX.Element | null = null
     content = (
         <Switch>
+          <Route exact path='/discover' component={Discover}/>
           <Route exact path='/:id?/data' component={ProjectData}/>
           <Route exact path='/:id?' component={Tinder}/>
         </Switch>

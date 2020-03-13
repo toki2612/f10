@@ -14,12 +14,18 @@ export const defaultTheme = {
   },
   fonts: {
     primary: {
-      serif: '',
-      sansSerif: ''
+      serif: 'Nunito',
+      sansSerif: 'Nunito'
     },
     secondary: {
-      serif: ''
+      serif: 'Nunito'
     }
+  },
+  typography: {
+    // Use the system font.
+    fontFamily:
+      'Nunito,-apple-system,system-ui,BlinkMacSystemFont,' +
+      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
   overrides: {
 

@@ -37,3 +37,7 @@ code {
   width: 100%;
   height: 100%;
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  opacity: 1 !important;
+}
