@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+.fixed {
+  position: sticky;
+  top: 0;
+  background-color: #1A1A1A;
+}
+
 .searchBox {
   display: flex;
   justify-content: center;
@@ -32,6 +38,7 @@
 .videos {
   display: flex;
   flex-wrap: wrap;
+  overflow-y: auto;
 }
 
 .video {

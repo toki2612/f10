@@ -41,7 +41,7 @@ export class Discover extends React.Component<IDiscoverProps> {
   render () {
 
     const videos: JSX.Element[] = []
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 12; i++) {
       videos.push(
         <div className={styles.video}>
 
@@ -52,33 +52,35 @@ export class Discover extends React.Component<IDiscoverProps> {
 
     return (
       <div className={styles.container}>
-        <div className={styles.searchBox}>
-          <InputBase 
-            id="outlined-basic"
-            placeholder="Search"
-            classes={{ root: styles.searchInput }}
+        <div className={styles.fixed}>
+          <div className={styles.searchBox}>
+            <InputBase 
+              id="outlined-basic"
+              placeholder="Search"
+              classes={{ root: styles.searchInput }}
+            />
+            <IconButton onClick={this.openSDG}><Plus color={'#fff'}/></IconButton>
+          </div>
+          <div className={styles.sliders}>
+          <Slider
+            min={0}
+            max={5000}
+            value={this.employees}
+            onChange={this.handleEmployeesChange}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+            // getAriaValueText={valuetext}
           />
-          <IconButton onClick={this.openSDG}><Plus color={'#fff'}/></IconButton>
-        </div>
-        <div className={styles.sliders}>
-        <Slider
-          min={0}
-          max={5000}
-          value={this.employees}
-          onChange={this.handleEmployeesChange}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          // getAriaValueText={valuetext}
-        />
-        <Slider
-          min={0}
-          max={500}
-          value={this.capital}
-          onChange={this.handleCapitalChange}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          // getAriaValueText={valuetext}
-        />
+          <Slider
+            min={0}
+            max={500}
+            value={this.capital}
+            onChange={this.handleCapitalChange}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+            // getAriaValueText={valuetext}
+          />
+          </div>
         </div>
         <div className={styles.videos}>
           {videos}

@@ -33,9 +33,10 @@ code {
 
 #root {
   background-color: #1A1A1A;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: calc(100% - 3.5rem);
+  top: 0;
+  bottom: 3.5rem;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

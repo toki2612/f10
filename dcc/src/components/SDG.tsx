@@ -5,6 +5,7 @@ import styles from './SDG.module.css'
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
 import { routerStore } from '../stores/routerStore';
+import { BackButton } from './common/Buttons';
 
 interface ISDGProps {
 
@@ -26,7 +27,10 @@ export class SDG extends React.Component<ISDGProps> {
 
     return (
       <div className={styles.container}>
-        {icons}
+        <BackButton onClick={routerStore.goBack}/>
+        <div className={styles.icons}>
+          {icons}
+        </div>
       </div>
     )
   }

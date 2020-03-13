@@ -1,9 +1,14 @@
 .container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.icons {
   display: flex;
   flex-wrap: wrap;
-  overflow-y: auto;
   height: 100%;
-  padding: 0 1.25rem;
+  padding: 3rem 1.25rem 7rem;
 }
 
 .iconBox {
