@@ -5,6 +5,9 @@ import styles from './Project.module.css'
 import { observable, action } from 'mobx'
 import bind from 'bind-decorator'
 import { routerStore } from '../../../stores/routerStore'
+import { IconButton } from '@material-ui/core'
+const HeartFilled = require('react-ionicons/lib/IosHeart')
+const HeartEmpty = require('react-ionicons/lib/IosHeartOutline')
 
 interface IProjectProps {
   data: any
@@ -47,9 +50,10 @@ export class Project extends React.Component<IProjectProps> {
                 #blockchain
               </div>
             </div>
-          <div className={styles.moreData}>
-
-          </div>
+            <div className={styles.moreData}>
+              <div className={styles.category}></div>
+              <IconButton><HeartEmpty color='white'/></IconButton>
+            </div>
         </div>
         <div className={styles.params1}>
           <div className={styles.tags}>
