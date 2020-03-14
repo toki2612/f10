@@ -32,14 +32,19 @@
 
 .name {
   font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 2.25;
 }
 
 .description {
-
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
 }
 
 .tags {
-
+  font-size: 0.75rem;
+  line-height: 1.25;
 }
 
 .data {

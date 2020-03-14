@@ -32,6 +32,7 @@ export class Project extends React.Component<IProjectProps> {
   
 
   render () {
+    const { data } = this.props
     return (
       <div className={classnames(styles.container, {[styles.slide1]: this.slideNumber === 1})}>
         <div className={styles.mainPage}>
@@ -41,10 +42,10 @@ export class Project extends React.Component<IProjectProps> {
           <div className={styles.data} onClick={this.slideLeft}>
             <div className={styles.textData}>
               <div className={styles.name}>
-                @Name
+                @{data.name}
               </div>
               <div className={styles.description}>
-                Description
+                {data.description}
               </div>
               <div className={styles.tags}>
                 #blockchain
@@ -57,21 +58,21 @@ export class Project extends React.Component<IProjectProps> {
         </div>
         <div className={styles.params1}>
           <div className={styles.tags}>
-                Country
-              </div>
-              <div className={styles.tags}>
-                Years
-              </div>
-              <div className={styles.tags}>
-                Employees
-              </div>
+            {data.country}
+            </div>
+            <div className={styles.tags}>
+            {data.year}
+            </div>
+            <div className={styles.tags}>
+            {data.team}
+            </div>
           </div>
           <div className={styles.params2}>
             <div className={styles.tags}>
-              Equity type
+            {data.type}
             </div>
             <div className={styles.tags}>
-              Capital $$$
+            {data.investment}
             </div>
           </div>
         </div>

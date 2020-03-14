@@ -7,6 +7,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { Project } from './common/project/Project'
 import bind from 'bind-decorator';
 import { routerStore } from '../stores/routerStore';
+import { dataStore } from '../stores/dataStore';
 
 type MatchParams = {
   uid: string
@@ -20,30 +21,35 @@ interface ITinderProps extends RouteComponentProps<MatchParams> {
 export class Tinder extends React.Component<ITinderProps> {
 
   componentDidMount () {
-    routerStore.push(`/${0}`)
+    // if (dataStore.projects && Object.keys(dataStore.projects).length) {
+    //   const initRoute = `/${dataStore.projects[Object.keys(dataStore.projects)[0]]}`
+    //   console.log(initRoute)
+    //   routerStore.push('/walo')
+    // }
+    routerStore.push('/walo')
   }
 
   @bind
-  updateRoute (idx: number) {
-    routerStore.push(`/${idx}`)
+  updateRoute (id: string) {
+    routerStore.push(`/${id}`)
   }
 
   render () {
     const sections: JSX.Element[] = []
-    for (let i = 0; i < 3; i++) {
-      const data = {
-        idx: i
+    if (dataStore.projects) {
+      for (const id in dataStore.projects) {
+        const data = {...dataStore.projects[id], id}
+        sections.push(
+          <div key={id} className="section">
+            <Project data={data}/>
+          </div>
+        )
       }
-      sections.push(
-        <div key={i} className="section">
-          <Project data={data}/>
-        </div>
-      )
     }
 
     return (
       <div className={styles.container}>
-        {<ReactFullpage
+        {sections.length && <ReactFullpage
           //fullpage options
           licenseKey = {'39614BC3-00294F80-B8B6ECF0-428BB41B'}
           scrollingSpeed = {500}
