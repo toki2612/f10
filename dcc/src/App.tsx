@@ -17,11 +17,13 @@ import {
 } from 'react-transition-group';
 import { JBLogin } from './components/common/jb/JBLogin';
 import { NDA } from './components/common/project/NDA';
+import { dataStore } from './stores/dataStore';
 
 @observer
 class App extends React.Component {
 
-  async componentDidMount () {
+  componentDidMount () {
+    // dataStore.init()
   }
 
   render () {
