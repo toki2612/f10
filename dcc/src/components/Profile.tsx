@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { routerStore } from '../stores/routerStore';
 import { Paper } from '@material-ui/core';
 import { PieChart } from './PieChart';
+import { dataStore } from '../stores/dataStore';
+import { Event } from '../components/Events'
 
 interface IProfileProps {
 
@@ -30,11 +32,23 @@ export class Profile extends React.Component<IProfileProps> {
       </div>
     </div>
 
+
+    const favEvents: JSX.Element[] = []
+    if (dataStore.events && Object.keys(dataStore.events).length >= 2) {
+      for (let i = 0; i < 2; i++) {
+        const id = Object.keys(dataStore.events)[i]
+        console.log({...dataStore.events[id], id})
+        favEvents.push(
+          <Paper key={i} elevation={1} className={styles.favorite}>
+            <Event data={{...dataStore.events[id], id}} inProfile/>
+          </Paper>
+        )
+      }
+    }
     const events: JSX.Element = <div className={styles.favoritesBox}>
       Events
       <div className={styles.favorites}>
-        <Paper elevation={1} className={styles.favorite}></Paper>
-        <Paper elevation={1} className={styles.favorite}></Paper>
+        {favEvents}
       </div>
       </div>
 

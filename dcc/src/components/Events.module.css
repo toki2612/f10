@@ -25,6 +25,15 @@
   text-transform: capitalize;
 }
 
+.inProfile .title {
+  padding: 0;
+}
+
+.inProfile .title h3{
+  margin: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
 .title h3 {
   margin: 0.5rem;
 }
