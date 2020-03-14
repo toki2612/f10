@@ -6,6 +6,7 @@ import { InputBase, Button } from '@material-ui/core';
 import bind from 'bind-decorator';
 import { routerStore } from '../../../stores/routerStore';
 import { TextButton } from '../Buttons';
+import { RouteComponentProps } from 'react-router';
 
 const dummyText = `
 This Nondisclosure Agreement (the “Agreement”) is entered into by and between Medecalchain with its principal offices at Zug, Bahnhofplatz 43, (“Disclosing Party“) and Hans Zuckermann, located at Zürich, Bahnhofstrasse 1 (“Receiving Party“) for the purpose of preventing the unauthorized disclosure of Confidential Information as defined below. The parties agree to enter into a confidential relationship with respect to the disclosure of certain proprietary and confidential information (“Confidential Information”).\n\n
@@ -29,7 +30,11 @@ This Agreement and each party’s obligations shall be binding on the representa
 
 `
 
-interface INDAProps {
+type MatchParams = {
+  id: string
+}
+
+interface INDAProps extends RouteComponentProps<MatchParams>{
 
 }
 
@@ -45,6 +50,8 @@ export class NDA extends React.Component<INDAProps> {
 
     const logo: JSX.Element = <div className={styles.logo}>
     </div>
+
+    console.log(this.props)
 
     return (
       <div className={styles.container}>

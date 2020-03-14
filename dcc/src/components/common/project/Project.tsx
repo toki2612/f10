@@ -7,6 +7,7 @@ import bind from 'bind-decorator'
 import { routerStore } from '../../../stores/routerStore'
 import { IconButton } from '@material-ui/core'
 import ReactCountryFlag from "react-country-flag"
+import { dataStore } from '../../../stores/dataStore'
 const HeartFilled = require('react-ionicons/lib/IosHeart')
 const HeartEmpty = require('react-ionicons/lib/IosHeartOutline')
 
@@ -31,15 +32,25 @@ export class Project extends React.Component<IProjectProps> {
     this.slideNumber -= 1
   }
   
+  @bind
+  @action
+  toggleLike (e: any) {
+    e.preventDefault()
+    if (!('liked' in dataStore.projects[this.props.data.id])) {
+      dataStore.projects[this.props.data.id].liked = true
+    } else {
+      dataStore.projects[this.props.data.id].liked = !dataStore.projects[this.props.data.id].liked
+    }
+  }
 
   render () {
     const { data } = this.props
     return (
       <div className={classnames(styles.container, {[styles.slide1]: this.slideNumber === 1})}>
         <div className={styles.mainPage}>
-          <div className={styles.video} style={{backgroundImage: `url(${require(`../../../resources/img/${data.id}.gif`)})`}}/>
-          <div className={styles.data} onClick={this.slideLeft}>
-            <div className={styles.textData}>
+          <div className={styles.video} style={{backgroundImage: `url(${require(`../../../resources/img/${data.id}.gif`)})`}} onClick={this.slideLeft}/>
+          <div className={styles.data}>
+            <div className={styles.textData} onClick={this.slideLeft}>
               <div className={styles.name}>
                 @{data.name}
               </div>
@@ -54,7 +65,9 @@ export class Project extends React.Component<IProjectProps> {
               <div className={styles.category}>
                 <img src={require(`../../../resources/sdg/E-WEB-Goal-${data.sdg < 10 ? '0' + data.sdg : data.sdg}.png`)} alt={`sdg-${data.sdg}`}/>
               </div>
-              <IconButton><HeartEmpty color='white'/></IconButton>
+              <IconButton onClick={this.toggleLike}>
+                {data.liked ? <HeartFilled color='white'/> : <HeartEmpty color='white'/>}
+              </IconButton>
             </div>
         </div>
         <div className={styles.params1}>

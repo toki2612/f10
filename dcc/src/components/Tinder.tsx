@@ -10,7 +10,7 @@ import { routerStore } from '../stores/routerStore';
 import { dataStore } from '../stores/dataStore';
 
 type MatchParams = {
-  uid: string
+  id: string
 }
 
 interface ITinderProps extends RouteComponentProps<MatchParams> {
@@ -20,13 +20,12 @@ interface ITinderProps extends RouteComponentProps<MatchParams> {
 @observer
 export class Tinder extends React.Component<ITinderProps> {
 
-  componentDidMount () {
-    // if (dataStore.projects && Object.keys(dataStore.projects).length) {
-    //   const initRoute = `/${dataStore.projects[Object.keys(dataStore.projects)[0]]}`
-    //   console.log(initRoute)
-    //   routerStore.push('/walo')
-    // }
-    routerStore.push('/walo')
+  componentDidUpdate () {
+    if (routerStore.location.pathname === '/' && dataStore.projects && Object.keys(dataStore.projects).length) {
+      const initRoute = `/${Object.keys(dataStore.projects)[0]}`
+      // console.log(initRoute)
+      routerStore.push(initRoute)
+    }
   }
 
   @bind
@@ -37,7 +36,7 @@ export class Tinder extends React.Component<ITinderProps> {
   render () {
     const sections: JSX.Element[] = []
     if (dataStore.projects) {
-      for (const id in dataStore.projects) {
+      for (const id of Object.keys(dataStore.projects)) {
         const data = {...dataStore.projects[id], id}
         sections.push(
           <div key={id} className="section">
@@ -54,7 +53,10 @@ export class Tinder extends React.Component<ITinderProps> {
           licenseKey = {'39614BC3-00294F80-B8B6ECF0-428BB41B'}
           scrollingSpeed = {500}
           onLeave={(origin: any, destination:any, direction:any) => {
-            this.updateRoute(destination.index)
+            // console.log(Object.keys(dataStore.projects)[destination.index])
+            this.updateRoute(
+              Object.keys(dataStore.projects)[destination.index]
+            )
           }}
           render={({ state, fullpageApi }: any) => {
             return (
