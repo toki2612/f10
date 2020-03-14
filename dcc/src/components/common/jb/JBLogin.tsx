@@ -5,8 +5,13 @@ import styles from './JBLogin.module.css'
 import { InputBase, Button } from '@material-ui/core';
 import bind from 'bind-decorator';
 import { routerStore } from '../../../stores/routerStore';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface IJBLoginProps {
+type MatchParams = {
+  id: string
+}
+
+interface IJBLoginProps extends RouteComponentProps<MatchParams>{
 
 }
 
@@ -19,7 +24,7 @@ export class JBLogin extends React.Component<IJBLoginProps> {
 
   @bind
   openNDA () {
-    routerStore.push('/0/data/nda')
+    routerStore.push('/' + this.props.match.params.id + '/data/nda')
   }
 
   render () {

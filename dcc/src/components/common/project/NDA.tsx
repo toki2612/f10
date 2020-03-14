@@ -7,6 +7,8 @@ import bind from 'bind-decorator';
 import { routerStore } from '../../../stores/routerStore';
 import { TextButton } from '../Buttons';
 import { RouteComponentProps } from 'react-router';
+import { dataStore } from '../../../stores/dataStore';
+import { action } from 'mobx';
 
 const dummyText = `
 This Nondisclosure Agreement (the “Agreement”) is entered into by and between Medecalchain with its principal offices at Zug, Bahnhofplatz 43, (“Disclosing Party“) and Hans Zuckermann, located at Zürich, Bahnhofstrasse 1 (“Receiving Party“) for the purpose of preventing the unauthorized disclosure of Confidential Information as defined below. The parties agree to enter into a confidential relationship with respect to the disclosure of certain proprietary and confidential information (“Confidential Information”).\n\n
@@ -42,16 +44,20 @@ interface INDAProps extends RouteComponentProps<MatchParams>{
 export class NDA extends React.Component<INDAProps> {
 
   @bind
+  @action
   acceptNDA () {
-    routerStore.push('/0/data')
+    routerStore.push('/' + this.props.match.params.id + '/data')
+    if (!('nda' in dataStore.projects[this.props.match.params.id])) {
+      dataStore.projects[this.props.match.params.id].nda = true
+    } else {
+      dataStore.projects[this.props.match.params.id].nda = !dataStore.projects[this.props.match.params.id].nda
+    }
   }
 
   render () {
 
     const logo: JSX.Element = <div className={styles.logo}>
     </div>
-
-    console.log(this.props)
 
     return (
       <div className={styles.container}>

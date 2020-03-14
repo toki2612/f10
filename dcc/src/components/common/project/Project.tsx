@@ -23,7 +23,7 @@ export class Project extends React.Component<IProjectProps> {
   @action
   slideLeft () {
     this.slideNumber += 1
-    routerStore.push(`/${this.props.data.idx}/data`)
+    routerStore.push(`/${this.props.data.id}/data`)
   }
 
   @bind

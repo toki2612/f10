@@ -2,6 +2,7 @@
   background-color: #1A1A1A;
   color: #C9AE58;
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   color: white;
@@ -19,6 +20,8 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  padding-bottom: 30%;
 }
 
 .slide1 .mainPage {
@@ -34,32 +37,44 @@
   width: 100%;
 }
 
+
 .name {
   font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 2.25;
 }
 
 .description {
-
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
 }
 
 .tags {
-
+  font-size: 0.75rem;
+  line-height: 1.25;
 }
 
 .data {
   width: 100%;
   display: flex;
+  margin-top: 1rem
 }
 
 .textData {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 65%;
   padding: 0 1.25rem;
 }
 
 .moreData {
-
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0.5rem;
 }
 
 .params1 {
@@ -77,6 +92,7 @@
   align-items: center;
   width: 100%;
   height: 3rem;
+  min-height: 3rem;
   background-color: #f1f2f6;
   background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
 }
@@ -85,6 +101,13 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.25rem;
+}
+
+.params4 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.25rem;
+  width: -webkit-fill-available;
 }
 
 .details {
@@ -118,7 +141,49 @@
   background-color: #f1f2f6;
   background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
   height: 3rem;
+  min-height: 3rem;
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.logo img {
+  padding: 0.6rem 1.25rem;
+  height: calc(100% - 1.2rem);
+}
+
+.category {
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.category img {
+  height: 100%;
+  width: 100%;
+}
+
+.team {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.teamMember {
+  height: 5rem;
+  width: 5rem;
+  margin: 0.25rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.docs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.docs button {
+  margin-bottom: 1.25rem;
 }

@@ -20,7 +20,16 @@ interface ITinderProps extends RouteComponentProps<MatchParams> {
 @observer
 export class Tinder extends React.Component<ITinderProps> {
 
+  componentDidMount () {
+    this.redirect()
+  }
+
   componentDidUpdate () {
+   this.redirect()
+  }
+
+  @bind
+  redirect () {
     if (routerStore.location.pathname === '/' && dataStore.projects && Object.keys(dataStore.projects).length) {
       const initRoute = `/${Object.keys(dataStore.projects)[0]}`
       // console.log(initRoute)

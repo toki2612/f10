@@ -48,7 +48,7 @@ class App extends React.Component {
       //               render={() => (
                       <Switch>
                         <Route exact path='/chats' component={Chat}/>
-                        <Route exact path='/jblogin' component={JBLogin}/>
+                        <Route exact path='/:id?/jblogin' component={JBLogin}/>
                         <Route exact path='/events' component={Events}/>
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/discover/sdg' component={SDG}/>
