@@ -42,3 +42,7 @@
   width: 10rem;
   margin: auto;
 }
+
+.button:hover {
+  background-color: #141e55;
+}

@@ -3,6 +3,8 @@ import * as React from 'react'
 // import classnames from 'classnames'
 import styles from './JBLogin.module.css'
 import { InputBase, Button } from '@material-ui/core';
+import bind from 'bind-decorator';
+import { routerStore } from '../../../stores/routerStore';
 
 interface IJBLoginProps {
 
@@ -10,6 +12,15 @@ interface IJBLoginProps {
 
 @observer
 export class JBLogin extends React.Component<IJBLoginProps> {
+
+  componentDidMount () {
+    // setTimeout(this.openNDA, 3000)
+  }
+
+  @bind
+  openNDA () {
+    routerStore.push('/0/data/nda')
+  }
 
   render () {
 
@@ -30,7 +41,7 @@ export class JBLogin extends React.Component<IJBLoginProps> {
             placeholder="Password"
             classes={{ root: styles.inputBox }}
           />
-          <Button className={styles.button}>
+          <Button className={styles.button} variant='contained' onClick={this.openNDA}>
             Login
           </Button>
         </div>
