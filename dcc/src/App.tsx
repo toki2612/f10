@@ -15,6 +15,7 @@ import {
   CSSTransition, 
   TransitionGroup 
 } from 'react-transition-group';
+import { JBLogin } from './components/common/jb/JBLogin';
 
 @observer
 class App extends React.Component {
@@ -42,6 +43,7 @@ class App extends React.Component {
       //               location={location}
       //               render={() => (
                       <Switch>
+                        <Route exact path='/jblogin' component={JBLogin}/>
                         <Route exact path='/events' component={Events}/>
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/discover/sdg' component={SDG}/>

@@ -1,0 +1,44 @@
+.container {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: -3.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.logo {
+  background-image: url('../../../resources/img/logo.svg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 4rem;
+  margin: 2.25rem
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.inputBox {
+  height: 3rem;
+  background-color: #c4c4c4;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.inputBox input {
+  
+}
+
+.button {
+  background-color: #141e55;
+  border-radius: 0;
+  color: white;
+  width: 10rem;
+  margin: auto;
+}

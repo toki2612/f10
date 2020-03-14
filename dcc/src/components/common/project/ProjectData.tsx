@@ -23,7 +23,8 @@ export class ProjectData extends React.Component<IProjectDataProps> {
   @bind
   @action
   signNda () {
-    this.ndaSigned = true
+    // this.ndaSigned = true
+    routerStore.push('/jblogin')
   }
   
   render () {
