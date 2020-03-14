@@ -19,6 +19,8 @@ export class Profile extends React.Component<IProfileProps> {
 
   render () {
 
+    const data = dataStore.projects ? dataStore.projects[Object.keys(dataStore.projects)[0]] : null
+
     const avatar: JSX.Element = <div className={styles.avatar}>
         <div className={styles.photo}>
           <img src={require('../resources/img/team-3.png')} alt='avatar'/>
@@ -29,8 +31,19 @@ export class Profile extends React.Component<IProfileProps> {
     const favorites: JSX.Element = <div className={styles.favoritesBox}>
       Favorites
       <div className={styles.favorites}>
-        <Paper elevation={1} className={styles.favorite}></Paper>
-        <Paper elevation={1} className={styles.favorite}></Paper>
+        <Paper elevation={1} className={styles.favorite}>
+        <div className={styles.favoriteLogo}>
+          <img src={data ? require(`../resources/img/logo-${Object.keys(dataStore.projects)[0]}.png`) : undefined} alt=''/>
+        </div>
+          <div className={styles.favoriteData}>
+            <div className={styles.tags}>
+              {data && data.type}
+            </div>
+            <div className={styles.tags}>
+              {data && data.investment}
+            </div>
+          </div>
+        </Paper>
       </div>
     </div>
 
