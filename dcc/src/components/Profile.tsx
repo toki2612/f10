@@ -20,7 +20,9 @@ export class Profile extends React.Component<IProfileProps> {
   render () {
 
     const avatar: JSX.Element = <div className={styles.avatar}>
-        <div className={styles.photo}>&nbsp;</div>
+        <div className={styles.photo}>
+          <img src={require('../resources/img/team-3.png')} alt='avatar'/>
+        </div>
         <div className={styles.name}>Hans Zuckermann</div>
     </div>
 

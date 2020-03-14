@@ -10,17 +10,23 @@
   flex-direction: column;
   background-color: #FAD6A5;
   background-image: linear-gradient(to bottom, #FAD6A5 0%, #EBC796 100%);
-  padding: 2.25rem 1.25rem 0.75rem;
+  padding: 1.5rem 1.25rem 0.75rem;
+  min-height: max-content;
 }
 
 .photo {
   height: 4.375rem;
   width: 4.375rem;
   border-radius: 50%;
-  background-image: url(../resources/img/avatar.jpeg);
+  /* background-image: url(../resources/img/avatar.jpeg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
 }
 
 .name {

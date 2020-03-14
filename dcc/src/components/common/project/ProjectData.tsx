@@ -2,7 +2,7 @@ import { observer } from 'mobx-react'
 import * as React from 'react'
 import classnames from 'classnames'
 import styles from './ProjectData.module.css'
-import { TextButton } from '../Buttons'
+import { TextButton, BackButton } from '../Buttons'
 import { observable, action, computed } from 'mobx'
 import bind from 'bind-decorator'
 import { routerStore } from '../../../stores/routerStore'
@@ -56,6 +56,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
 
     return (
       <div className={classnames(styles.container, this.ndaSigned ? undefined : styles.locked)}>
+        <BackButton onClick={routerStore.goBack}/>
         <div className={styles.logo}>
             <img src={require(`../../../resources/img/logo-${this.props.match.params.id}.png`)} alt='logo'/>
           </div>

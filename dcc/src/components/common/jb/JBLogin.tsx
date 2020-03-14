@@ -19,7 +19,7 @@ interface IJBLoginProps extends RouteComponentProps<MatchParams>{
 export class JBLogin extends React.Component<IJBLoginProps> {
 
   componentDidMount () {
-    setTimeout(this.openNDA, 3000)
+    // setTimeout(this.openNDA, 3000)
   }
 
   @bind
