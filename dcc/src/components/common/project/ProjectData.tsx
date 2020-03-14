@@ -9,6 +9,7 @@ import { routerStore } from '../../../stores/routerStore'
 import { RouteComponentProps } from 'react-router-dom'
 import { dataStore } from '../../../stores/dataStore'
 import ReactCountryFlag from 'react-country-flag'
+const group = require('../../../resources/img/group.svg')
 
 type MatchParams = {
   id: string
@@ -56,7 +57,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
 
     return (
       <div className={classnames(styles.container, this.ndaSigned ? undefined : styles.locked)}>
-        <BackButton onClick={routerStore.goBack}/>
+        <BackButton onClick={this.ndaSigned ? () => routerStore.push('/') : routerStore.goBack}/>
         <div className={styles.logo}>
             <img src={require(`../../../resources/img/logo-${this.props.match.params.id}.png`)} alt='logo'/>
           </div>
@@ -94,7 +95,10 @@ export class ProjectData extends React.Component<IProjectDataProps> {
               {data && data.year}
             </div>
             <div className={styles.tags}>
+             <span>
+              <img src={group} alt='group-icon'/>
               {data && data.team}
+             </span>
             </div>
           </div>
           <div className={styles.params2}>

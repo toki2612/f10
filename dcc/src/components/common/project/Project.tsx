@@ -10,6 +10,7 @@ import ReactCountryFlag from "react-country-flag"
 import { dataStore } from '../../../stores/dataStore'
 const HeartFilled = require('react-ionicons/lib/IosHeart')
 const HeartEmpty = require('react-ionicons/lib/IosHeartOutline')
+const group = require('../../../resources/img/group.svg')
 
 interface IProjectProps {
   data: any
@@ -85,7 +86,10 @@ export class Project extends React.Component<IProjectProps> {
             {data.year}
             </div>
             <div className={styles.tags}>
-            {data.team}
+            <span>
+              <img src={group} alt='group-icon'/>
+              {data && data.team}
+             </span>
             </div>
           </div>
           <div className={styles.params2}>

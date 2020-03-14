@@ -194,3 +194,15 @@
 .docs button {
   margin-bottom: 1.25rem;
 }
+
+.tags span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tags span img {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.4rem;
+}
