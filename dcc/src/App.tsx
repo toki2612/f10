@@ -18,6 +18,7 @@ import {
 import { JBLogin } from './components/common/jb/JBLogin';
 import { NDA } from './components/common/project/NDA';
 import { dataStore } from './stores/dataStore';
+import { Chat } from './components/Chat';
 
 @observer
 class App extends React.Component {
@@ -46,6 +47,7 @@ class App extends React.Component {
       //               location={location}
       //               render={() => (
                       <Switch>
+                        <Route exact path='/chats' component={Chat}/>
                         <Route exact path='/jblogin' component={JBLogin}/>
                         <Route exact path='/events' component={Events}/>
                         <Route exact path='/profile' component={Profile}/>
