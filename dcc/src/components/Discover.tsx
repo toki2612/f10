@@ -44,7 +44,7 @@ export class Discover extends React.Component<IDiscoverProps> {
     for (let i = 0; i < 12; i++) {
       videos.push(
         <div className={styles.video}>
-
+          {/* <img src={gifSrc} alt='gif'/> */}
         </div>
       )
     }

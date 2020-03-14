@@ -36,8 +36,8 @@ export class Project extends React.Component<IProjectProps> {
     return (
       <div className={classnames(styles.container, {[styles.slide1]: this.slideNumber === 1})}>
         <div className={styles.mainPage}>
-          <div className={styles.video}>
-            Video
+          <div className={styles.video} style={{backgroundImage: `url(${require(`../../../resources/img/${data.id}.gif`)})`}}>
+            
           </div>
           <div className={styles.data} onClick={this.slideLeft}>
             <div className={styles.textData}>
