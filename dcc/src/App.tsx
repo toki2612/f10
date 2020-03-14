@@ -11,6 +11,10 @@ import { Discover } from './components/Discover';
 import { SDG } from './components/SDG';
 import { Events } from './components/Events';
 import { Profile } from './components/Profile';
+import { 
+  CSSTransition, 
+  TransitionGroup 
+} from 'react-transition-group';
 
 @observer
 class App extends React.Component {
@@ -21,16 +25,37 @@ class App extends React.Component {
   render () {
     let content: JSX.Element | null = null
     content = (
-        <Switch>
-          <Route exact path='/events' component={Events}/>
-          <Route exact path='/profile' component={Profile}/>
-          <Route exact path='/discover/sdg' component={SDG}/>
-          <Route exact path='/discover' component={Discover}/>
-          <Route exact path='/:id?/data' component={ProjectData}/>
-          <Route exact path='/:id?' component={Tinder}/>
-        </Switch>
-        
-      
+      // <Route
+      //     render={({ location }) => {
+      //       const { pathname } = location;
+      //       return (
+      //         <TransitionGroup>
+      //           <CSSTransition 
+      //             key={pathname}
+      //             classNames={"page"}
+      //             timeout={{
+      //               enter: 10000,
+      //               exit: 10000,
+      //             }}
+      //           >
+      //             <Route
+      //               location={location}
+      //               render={() => (
+                      <Switch>
+                        <Route exact path='/events' component={Events}/>
+                        <Route exact path='/profile' component={Profile}/>
+                        <Route exact path='/discover/sdg' component={SDG}/>
+                        <Route exact path='/discover' component={Discover}/>
+                        <Route exact path='/:id?/data' component={ProjectData}/>
+                        <Route exact path='/:id?' component={Tinder}/>
+                      </Switch>
+        //             )}
+        //           />
+        //         </CSSTransition>
+        //       </TransitionGroup>
+        //     );
+        //   }}
+        // />
     )
     return (
         <React.Fragment>

@@ -4,6 +4,7 @@ import * as React from 'react'
 import styles from './PieChart.module.css'
 import * as Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { windowStore } from '../stores/windowStore'
 
 interface IPieChartProps {
 
@@ -18,7 +19,7 @@ export class PieChart extends React.Component<IPieChartProps> {
     const chartOptions: any = {
       chart: {
         backgroundColor: 'transparent',
-        height: '300px',
+        height: `${windowStore.height * 0.33}px`,
         plotBackgroundColor: 'transparent',
         plotBorderWidth: null,
         plotShadow: false,
@@ -36,11 +37,17 @@ export class PieChart extends React.Component<IPieChartProps> {
       },
       plotOptions: {
         pie: {
+          borderWidth: 0,
           allowPointSelect: true,
           cursor: 'pointer',
           dataLabels: {
               enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+              distance: 10,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              style: {
+                color: '#fff',
+                textOutline: 'none'
+              }
           }
       }
       },

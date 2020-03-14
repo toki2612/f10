@@ -18,7 +18,7 @@ export class Profile extends React.Component<IProfileProps> {
   render () {
 
     const avatar: JSX.Element = <div className={styles.avatar}>
-        <div className={styles.photo}></div>
+        <div className={styles.photo}>&nbsp;</div>
         <div className={styles.name}>Hans Zuckermann</div>
     </div>
 
@@ -39,7 +39,7 @@ export class Profile extends React.Component<IProfileProps> {
       </div>
 
     const portfolio: JSX.Element = <div className={styles.favoritesBox}>
-    Portfolio
+    SDG portfolio
       <div className={styles.portfolio}>
         <PieChart />
       </div>

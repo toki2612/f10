@@ -17,10 +17,14 @@
   height: 4.375rem;
   width: 4.375rem;
   border-radius: 50%;
+  background-image: url(../resources/img/avatar.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .name {
-  /* color: white; */
+  margin-top: 0.5rem;
 }
 
 .favorites {
@@ -38,6 +42,10 @@
 .favoritesBox {
   color: white;
   padding: 1.25rem;
+}
+
+.favoritesBox:last-of-type {
+  padding: 1.25rem 1.25rem 10rem;
 }
 
 .events {
