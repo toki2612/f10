@@ -41,9 +41,9 @@ export class Discover extends React.Component<IDiscoverProps> {
   render () {
 
     const videos: JSX.Element[] = []
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 10; i++) {
       videos.push(
-        <div className={styles.video}>
+        <div key={i} className={styles.video} style={{backgroundImage: `url(${require(`../resources/img/dummy-${i}.gif`)})`}}>
           {/* <img src={gifSrc} alt='gif'/> */}
         </div>
       )

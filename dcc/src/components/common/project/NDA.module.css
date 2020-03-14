@@ -4,6 +4,7 @@
   align-items: center;
   color: white;
   padding: 2rem 1.25rem;
+  height: 100%;
 }
 
 .title {
@@ -14,11 +15,26 @@
 
 }
 
-.text {
+.textBox {
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
 
+.text {
+  padding-bottom: 50%;
+  font-size: 0.875rem;
+  line-height: 1.25;
 }
 
 .button {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 0;
+  height: 3.5rem;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(26, 26, 26, 0), rgba(26, 26, 26, 0.9) 72%, rgba(26, 26, 26, 1));
 }
