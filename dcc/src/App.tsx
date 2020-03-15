@@ -9,7 +9,7 @@ import { Navigation } from './components/Navigation';
 import { ProjectData } from './components/common/project/ProjectData';
 import { Discover } from './components/Discover';
 import { SDG } from './components/SDG';
-import { Events } from './components/Events';
+import { Events, EventPage } from './components/Events';
 import { Profile } from './components/Profile';
 import { 
   CSSTransition, 
@@ -51,6 +51,7 @@ class App extends React.Component {
                         <Route exact path='/chats' component={Chat}/>
                         <Route exact path='/:id?/jblogin' component={JBLogin}/>
                         <Route exact path='/events' component={Events}/>
+                        <Route exact path='/events/:id?' component={EventPage}/>
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/discover/sdg' component={SDG}/>
                         <Route exact path='/discover' component={Discover}/>

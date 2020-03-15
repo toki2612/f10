@@ -37,3 +37,70 @@
 .title h3 {
   margin: 0.5rem;
 }
+
+.eventPageBox {
+  display: flex;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: center;
+}
+
+.darkOverlay {
+  background-color: rgba(26, 26, 26, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.blurred {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.opportunities {
+  color: white;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  /* position: absolute;
+  bottom: 0;
+  right: 0; */
+  padding: 1rem 1.5rem;
+  text-align: left;
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  width: -webkit-fill-available;
+  margin-top: 15%;
+  z-index: 1;
+}
+
+.data {
+  margin-bottom: 3rem;
+}
+
+.privateBox {
+  position: absolute;
+  bottom: 3rem;
+  color: white;
+  font-weight: 900;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  text-align: center;
+}
+
+.privateBox div {
+  margin-bottom: 1rem;
+}
+
