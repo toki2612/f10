@@ -53,6 +53,7 @@ class App extends React.Component {
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/discover/sdg' component={SDG}/>
                         <Route exact path='/discover' component={Discover}/>
+                        <Route exact path='/:id?/data/vault' component={DueDiligence}/>
                         <Route exact path='/:id?/data/due_diligence' component={DueDiligence}/>
                         <Route exact path='/:id?/data/nda' component={NDA}/>
                         <Route exact path='/:id?/data' component={ProjectData}/>

@@ -42,6 +42,11 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     routerStore.push('/' + this.props.match.params.id + '/data/due_diligence')
   }
 
+  @bind
+  openVault () {
+    routerStore.push('/' + this.props.match.params.id + '/data/vault')
+  }
+
   render () {
     const data = dataStore.projects ? dataStore.projects[this.props.match.params.id] : null
 
@@ -54,8 +59,8 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     }
 
     let vault: JSX.Element | null = null
-    if (this.ndaSigned) {
-      vault = <IconButton className={styles.vault}>
+    if (!this.ndaSigned) {
+      vault = <IconButton className={styles.vault} onClick={this.openVault}>
         <img alt='vault' src={vaultSrc} />
       </IconButton>
     }
@@ -78,7 +83,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
         <div className={styles.logo}>
             <img src={require(`../../../resources/img/logo-${this.props.match.params.id}.png`)} alt='logo'/>
           </div>
-        <div className={styles.mainPage}>
+        <div className={styles.mainPage} style={{ overflowY: this.ndaSigned ? 'auto' : 'hidden' }}>
           <div className={styles.data}>
             <div className={styles.textData}>
               <div className={styles.name}>

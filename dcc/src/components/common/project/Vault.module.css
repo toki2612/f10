@@ -14,5 +14,8 @@
 }
 
 .introImg {
-  
+  background-image: url(../../../resources/img/vault.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
