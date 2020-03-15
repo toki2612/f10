@@ -56,7 +56,7 @@ export class Discover extends React.Component<IDiscoverProps> {
     for (const i of [5, 12, 17]) {
       const n = i < 10 ? '0' + i : i
       icons.push(
-        <div className={styles.iconBox}>
+        <div className={styles.iconBox} onClick={this.openSDG}>
           <img src={require(`../resources/sdg/E-WEB-Goal-${n}.png`)} alt={`sdg-${i}`}/>
         </div>
       )

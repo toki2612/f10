@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.25rem;
+  min-height: max-content;
 }
 
 .slider {
@@ -51,6 +52,7 @@
 .videos {
   display: flex;
   flex-wrap: wrap;
+  min-height: max-content;
 }
 
 .video {
@@ -66,12 +68,14 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0.5rem 1.25rem;
+  min-height: max-content;
 }
 
 .iconBox {
   display: flex;
   margin: 0.5rem;
   width: 4rem;
+  height: 4rem;
 }
 
 .iconBox img {
@@ -93,6 +97,7 @@
 .flags {
   display: flex;
   padding: 0 1.25rem;
+  min-height: max-content;
 }
 
 .val {
