@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introImg {
+  
+}

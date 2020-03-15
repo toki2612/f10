@@ -48,7 +48,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     let NDABox: JSX.Element | null = null
     if (!this.ndaSigned) {
       NDABox = <div className={styles.ndaBox}>
-      <div className={styles.ndaMessage}>Nda message please sign etc.</div>
+      <div className={styles.ndaMessage}>If you want to see more details about this investment opportunity, please sign their NDA.</div>
       <TextButton text='Sign NDA' onClick={this.signNda}/>
     </div>
     }
