@@ -59,7 +59,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     }
 
     let vault: JSX.Element | null = null
-    if (!this.ndaSigned) {
+    if (this.ndaSigned) {
       vault = <IconButton className={styles.vault} onClick={this.openVault}>
         <img alt='vault' src={vaultSrc} />
       </IconButton>
