@@ -89,6 +89,7 @@
 
 .params2 {
   color: #1A1A1A;
+  font-weight: bold;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -150,7 +151,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 
 .logo img {
@@ -176,9 +177,16 @@
 }
 
 .teamMember {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamPic {
   height: 5rem;
   width: 5rem;
-  margin: 0.25rem;
+  margin: 0.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -208,10 +216,10 @@
 }
 
 .vault {
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
   position: absolute;
-  right: 0;
+  right: 1rem;
   top: 0;
 }
 

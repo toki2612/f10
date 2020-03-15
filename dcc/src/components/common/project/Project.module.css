@@ -82,6 +82,7 @@
 
 .params2 {
   color: #1A1A1A;
+  font-weight: bold;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

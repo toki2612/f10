@@ -61,11 +61,13 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     }
 
     const team: JSX.Element[] = []
+    const teamNames = ['Michael Ionov', 'Urs Volt', 'Rahel Zingg']
     for (let i = 0; i < 3; i++) {
       team.push(
-        <div key={i} className={styles.teamMember} style={{backgroundImage: `url(${require(`../../../resources/img/team-${i}.png`)})`}}>
-
-        </div>
+       <div className={styles.teamMember}>
+          <div key={i} className={styles.teamPic} style={{backgroundImage: `url(${require(`../../../resources/img/team-${i}.png`)})`}}/> 
+          <div className={styles.teamName}>{teamNames[i]}</div>
+       </div>
       )
     }
 
