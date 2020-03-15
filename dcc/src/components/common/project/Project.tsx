@@ -43,9 +43,10 @@ export class Project extends React.Component<IProjectProps> {
       dataStore.projects[this.props.data.id].liked = !dataStore.projects[this.props.data.id].liked
     }
   }
-
+  
   render () {
     const { data } = this.props
+    
     return (
       <div className={classnames(styles.container, {[styles.slide1]: this.slideNumber === 1})}>
         <div className={styles.mainPage}>
@@ -59,7 +60,7 @@ export class Project extends React.Component<IProjectProps> {
                 {data.description}
               </div>
               <div className={styles.tags}>
-                #blockchain
+                {data.tags.split(',').map((t:string) => '#' + t + ' ')}
               </div>
             </div>
             <div className={styles.moreData}>

@@ -9,7 +9,9 @@ import { routerStore } from '../../../stores/routerStore'
 import { RouteComponentProps } from 'react-router-dom'
 import { dataStore } from '../../../stores/dataStore'
 import ReactCountryFlag from 'react-country-flag'
+import { IconButton } from '@material-ui/core'
 const group = require('../../../resources/img/group.svg')
+const vaultSrc = require('../../../resources/img/vault.svg')
 
 type MatchParams = {
   id: string
@@ -51,6 +53,13 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     </div>
     }
 
+    let vault: JSX.Element | null = null
+    if (this.ndaSigned) {
+      vault = <IconButton className={styles.vault}>
+        <img alt='vault' src={vaultSrc} />
+      </IconButton>
+    }
+
     const team: JSX.Element[] = []
     for (let i = 0; i < 3; i++) {
       team.push(
@@ -63,6 +72,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     return (
       <div className={classnames(styles.container, this.ndaSigned ? undefined : styles.locked)}>
         <BackButton onClick={this.ndaSigned ? () => routerStore.push('/') : routerStore.goBack}/>
+        {vault}
         <div className={styles.logo}>
             <img src={require(`../../../resources/img/logo-${this.props.match.params.id}.png`)} alt='logo'/>
           </div>
