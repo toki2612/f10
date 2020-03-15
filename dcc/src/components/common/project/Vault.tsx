@@ -33,6 +33,7 @@ interface IVaultProps extends RouteComponentProps<MatchParams>{
 export class Vault extends React.Component<IVaultProps> {
   @observable success: boolean = false
   @observable loading: boolean = false
+  @observable browsing: boolean = false
   timer: any = 0
 
   @bind
@@ -49,14 +50,25 @@ export class Vault extends React.Component<IVaultProps> {
 
   @bind
   @action
+  setBrowsing (value: boolean) {
+    this.browsing = value
+  }
+
+  @bind
+  @action
   upload () {
     if (!this.loading) {
       this.setSuccess(false)
-      this.setLoading(true)
+      this.timer = setTimeout(() => {
+        this.setBrowsing(true)
+      }, 200)
+      this.timer = setTimeout(() => {
+        this.setLoading(true)
+      }, 1500)
       this.timer = setTimeout(() => {
         this.setSuccess(true)
         this.setLoading(false)
-      }, 3000)
+      }, 3500)
     }
   }
 
@@ -113,6 +125,7 @@ export class Vault extends React.Component<IVaultProps> {
         <BackButton onClick={routerStore.goBack}/>
         <div className={styles.title}>Vault</div>
         <div className={styles.introImg}></div>
+        {this.browsing && !this.loading && !this.success && <div className={styles.browsing} />}
         {this.success && <div className={styles.docs}>{docs}</div>}
         {uploadArea}
       </div>

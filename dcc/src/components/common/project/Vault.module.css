@@ -110,3 +110,16 @@
 .progress {
   color: #FAD6A5;
 }
+
+.browsing {
+  background-image: url(../../../resources/img/drive.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
