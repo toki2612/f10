@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.provider {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0.5rem 1rem;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.name {
+  margin-left: 1rem;
+}
+
+.button {
+  
+}

@@ -35,6 +35,11 @@ export class ProjectData extends React.Component<IProjectDataProps> {
     routerStore.push('/' + this.props.match.params.id + '/jblogin')
   }
   
+  @bind
+  toDueDiligence () {
+    routerStore.push('/' + this.props.match.params.id + '/data/due_diligence')
+  }
+
   render () {
     const data = dataStore.projects ? dataStore.projects[this.props.match.params.id] : null
 
@@ -128,7 +133,7 @@ export class ProjectData extends React.Component<IProjectDataProps> {
             </div>
           </div>
           <div className={styles.docs}>
-            <TextButton text='Due Diligence'/>
+            <TextButton text='Due Diligence' onClick={this.toDueDiligence}/>
             <TextButton text='Private deal'/>
             <TextButton text='Club deal'/>
           </div>
