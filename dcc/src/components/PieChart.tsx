@@ -54,15 +54,15 @@ export class PieChart extends React.Component<IPieChartProps> {
       series: [{
         name: 'Brands',
         data: [{
-          name: 'Chrome',
+          name: '#clean_water',
           y: 61.41,
           sliced: true,
           selected: true
         }, {
-          name: 'Internet Explorer',
+          name: '#gender_equality',
           y: 13.84
         }, {
-          name: 'Firefox',
+          name: '#climate_action',
           y: 8.85
         }]
       }]
