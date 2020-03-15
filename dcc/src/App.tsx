@@ -20,12 +20,16 @@ import { NDA } from './components/common/project/NDA';
 import { Chat } from './components/Chat';
 import { DueDiligence } from './components/common/project/DueDiligence';
 import { Vault } from './components/common/project/Vault';
+import { routerStore } from './stores/routerStore';
 
 @observer
 class App extends React.Component {
 
-  componentDidMount () {
-    // dataStore.init()
+  componentDidMount() {
+    // mobile 
+    if (window.screen.width >= 480) {
+      routerStore.history.push('/phone.html');
+    }
   }
 
   render () {
