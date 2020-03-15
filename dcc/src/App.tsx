@@ -19,6 +19,7 @@ import { JBLogin } from './components/common/jb/JBLogin';
 import { NDA } from './components/common/project/NDA';
 import { Chat } from './components/Chat';
 import { DueDiligence } from './components/common/project/DueDiligence';
+import { Vault } from './components/common/project/Vault';
 
 @observer
 class App extends React.Component {
@@ -53,7 +54,7 @@ class App extends React.Component {
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/discover/sdg' component={SDG}/>
                         <Route exact path='/discover' component={Discover}/>
-                        <Route exact path='/:id?/data/vault' component={DueDiligence}/>
+                        <Route exact path='/:id?/data/vault' component={Vault}/>
                         <Route exact path='/:id?/data/due_diligence' component={DueDiligence}/>
                         <Route exact path='/:id?/data/nda' component={NDA}/>
                         <Route exact path='/:id?/data' component={ProjectData}/>
