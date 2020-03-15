@@ -114,7 +114,7 @@
 .browsing {
   background-color: white;
   background-image: url(../../../resources/img/drive.png);
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   height: 100%;
