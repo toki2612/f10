@@ -27,9 +27,9 @@ class App extends React.Component {
 
   componentDidMount() {
     // mobile 
-    if (window.screen.width >= 480) {
-      routerStore.history.push('/phone.html');
-    }
+    // if (window.screen.width >= 480) {
+    //   routerStore.history.push('/phone.html');
+    // }
   }
 
   render () {
