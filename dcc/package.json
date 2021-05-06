@@ -18,7 +18,7 @@
     "bind-decorator": "^1.0.11",
     "classnames": "^2.2.6",
     "firebase": "^7.11.0",
-    "highcharts": "^8.0.4",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^3.0.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.1.8",
